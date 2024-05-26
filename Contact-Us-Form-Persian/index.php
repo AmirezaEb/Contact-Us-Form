@@ -1,10 +1,16 @@
+<?php
+
+@include 'config/config.php';
+@include 'controller/helper.php';
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>ارتباط با ما</title>
+    <title>Contact Form</title>
     <link rel="stylesheet" href="assets/css/main.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
     <link href="https://fonts.cdnfonts.com/css/iranian-sans" rel="stylesheet">
@@ -25,38 +31,37 @@ Telegram channel: @HeroExpert_ir
                     بیا با هم تماس بگیریم
                 </h3>
                 <p class="text">
-                    کاربر گرامی افتخار ما این است که نظرات، شکایات، انتقادات و پیشنهادات خود را در مورد وب سایت از طریق
-                    این فرم با ما در میان بگذارید.
+                    کاربر گرامی افتخار ما این است که نظرات، شکایات، انتقادات و پیشنهادات خود را در مورد وب سایت از طریق این فرم با ما در میان بگذارید.
                 </p>
 
                 <div class="info">
                     <div class="information">
                         <i class="fas fa-map-marker-alt"></i> &nbsp &nbsp
-                        <p>جمهوری اسلامی ایران</p>
+                        <p><?= Address ?></p>
                     </div>
                     <div class="information">
                         <i class="fas fa-envelope"></i> &nbsp &nbsp
-                        <p>aabrahimi1718@gmail.com</p>
+                        <p><?= Email ?></p>
                     </div>
                     <div class="information">
                         <i class="fas fa-phone"></i>&nbsp &nbsp
-                        <p class="phone-num">+989358919279</p>
+                        <p class="phone-num"><?= PhoneNumber ?></p>
                     </div>
                 </div>
 
                 <div class="social-media">
                     <p>راه های ارتباط با ما :</p>
                     <div class="social-icons">
-                        <a href="https://www.instagram.com/amireza._.eb">
+                        <a href="<?= Instagram ?>">
                             <i class="fab fa-instagram"></i>
                         </a>
-                        <a href="https://t.me/HeroExpert_ir">
+                        <a href="<?= Telegram ?>">
                             <i class="fab fa-telegram"></i>
                         </a>
-                        <a href="https://github.com/AmirezaEb">
+                        <a href="<?= Github ?>">
                             <i class="fab fa-github"></i>
                         </a>
-                        <a href="https://www.linkedin.com/in/amirreza-ebrahimi-9623052a9">
+                        <a href="<?= Linkedin ?>">
                             <i class="fab fa-linkedin-in"></i>
                         </a>
                     </div>
@@ -67,25 +72,24 @@ Telegram channel: @HeroExpert_ir
                 <span class="circle one"></span>
                 <span class="circle two"></span>
 
-                <form action="#" method="post" autocomplete="off">
+                <form action="controller/send.php" method="post" autocomplete="off">
                     <h3 class="title">ارتباط با ما</h3>
-                    <div id="name-div" class="input-container" data-validator="پر کردن این فیلد الزامی میباشد !">
+                    <div id="name-div" class="input-container" data-validator="please provide a valid name !">
                         <input id="name-input" type="text" name="name" class="input">
                         <label for=""> نام </label>
                         <span>نام </span>
                     </div>
-                    <div id="email-div" class="input-container" data-validator="لطفا یک ایمیل معتبر وارد نمایید !">
+                    <div id="email-div" class="input-container" data-validator="please enter valid email !">
                         <input id="email-input" type="email" name="email" class="input" />
                         <label for="">ایمیل</label>
                         <span>ایمیل</span>
                     </div>
-                    <div id="phone-div" class="input-container"
-                        data-validator="لطفا یک شماره موبایل معتبر وارد نمایید !">
+                    <div id="phone-div" class="input-container" data-validator="phone number must be numberic !">
                         <input id="phone-input" type="number" name="phone" class="input" />
                         <label for="">شماره تماس</label>
                         <span>شماره تماس</span>
                     </div>
-                    <div id="text-div" class="input-container textarea" data-validator="لطفا متن خود را وارد نمایید !">
+                    <div id="text-div" class="input-container textarea" data-validator="please enter your message !">
                         <textarea id="text-input" name="message" class="input"></textarea>
                         <label for="">متن پیام</label>
                         <span>متن پیام</span>

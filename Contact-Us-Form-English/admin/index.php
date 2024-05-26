@@ -1,3 +1,16 @@
+<?php
+
+@include '../config/config.php';
+@include '../controller/helper.php';
+
+if (isset($_POST['login'])) {
+    if ($adminEmail === $_POST['email'] && $adminPassword === $_POST['password']) {
+        redirect('contacts.php');
+    }
+    redirect('./?Error=NotFoundAdmin');
+}
+?>
+
 <!-- 
 Developed by Hero Expert 
 Telegram channel: @HeroExpert_ir 
@@ -7,15 +20,14 @@ Telegram channel: @HeroExpert_ir
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
+    <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
     <title>Admin Panel Log in</title>
     <!-- Tell the browser to be responsive to screen width -->
     <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
     <!-- Bootstrap 4.0.0 -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css"
-        integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css">
 
@@ -38,7 +50,7 @@ Telegram channel: @HeroExpert_ir
 
                 <div class="col-lg-12 login-form">
                     <div class="col-lg-12 login-form">
-                        <form method="post" action="#">
+                        <form method="post" action="<?= $_SERVER['PHP_SELF'] ?>">
                             <div class="form-group">
                                 <label class="form-control-label email-label">Email</label>
                                 <input type="email" name="email" class="form-control email">
@@ -49,12 +61,14 @@ Telegram channel: @HeroExpert_ir
                             </div>
 
                             <div class="col-lg-12 loginbttm">
-                                
+                                <!--    -->
                                 <p class="login-btm login-text">
+                                    <?php if (isset($_GET['Error']) && $_GET['Error'] == 'NotFoundAdmin') {
+                                        echo "No Admin Was Found With This Email And Password !";
+                                    } ?>
                                 </p>
                                 <div class="col-lg-12 text-center login-btm login-button">
-                                    <button id="login-btn" type="submit" name="login"
-                                        class="btn btn-outline-primary">LOGIN</button>
+                                    <button id="login-btn" type="submit" name="login" class="btn btn-outline-primary">LOGIN</button>
                                 </div>
                             </div>
                         </form>

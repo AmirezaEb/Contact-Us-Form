@@ -1,3 +1,10 @@
+<?php
+
+@include 'config/config.php';
+@include 'controller/helper.php';
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -22,38 +29,37 @@ Telegram channel: @HeroExpert_ir
             <div class="contact-info">
                 <h3 class="title">Let's get in touch</h3>
                 <p class="text">
-                    Dear user, it is our honor to share your comments, complaints, criticisms and suggestions about the
-                    website with us through this form.
+                    Dear user, it is our honor to share your comments, complaints, criticisms and suggestions about the website with us through this form.
                 </p>
 
                 <div class="info">
                     <div class="information">
                         <i class="fas fa-map-marker-alt"></i> &nbsp &nbsp
-                        <p>The Islamic Republic Of Iran</p>
+                        <p><?= Address ?></p>
                     </div>
                     <div class="information">
                         <i class="fas fa-envelope"></i> &nbsp &nbsp
-                        <p>aabrahimi1718@gmail.com</p>
+                        <p><?= Email ?></p>
                     </div>
                     <div class="information">
                         <i class="fas fa-phone"></i>&nbsp &nbsp
-                        <p>+989358919279</p>
+                        <p><?= PhoneNumber ?></p>
                     </div>
                 </div>
 
                 <div class="social-media">
                     <p>Connect with us :</p>
                     <div class="social-icons">
-                        <a href="https://www.instagram.com/amireza._.eb">
+                        <a href="<?= Instagram ?>">
                             <i class="fab fa-instagram"></i>
                         </a>
-                        <a href="https://t.me/HeroExpert_ir">
+                        <a href="<?= Telegram ?>">
                             <i class="fab fa-telegram"></i>
                         </a>
-                        <a href="https://github.com/AmirezaEb">
+                        <a href="<?= Github ?>">
                             <i class="fab fa-github"></i>
                         </a>
-                        <a href="https://www.linkedin.com/in/amirreza-ebrahimi-9623052a9">
+                        <a href="<?= Linkedin ?>">
                             <i class="fab fa-linkedin-in"></i>
                         </a>
                     </div>
@@ -64,7 +70,7 @@ Telegram channel: @HeroExpert_ir
                 <span class="circle one"></span>
                 <span class="circle two"></span>
 
-                <form action="#" method="post" autocomplete="off">
+                <form action="controller/send.php" method="post" autocomplete="off">
                     <h3 class="title">Contact us</h3>
                     <div id="name-div" class="input-container" data-validator="please provide a valid name !">
                         <input id="name-input" type="text" name="name" class="input">
