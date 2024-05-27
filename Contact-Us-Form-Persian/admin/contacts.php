@@ -87,7 +87,7 @@ Telegram channel: @HeroExpert_ir
       
     <nav aria-label="Page navigation example">
       <div class="pagination justify-content-center">
-        <a href="<?= "contacts.php?page=" . $page - 1 ?>" class="<?= ($page == 1) ? "page-item page-link disabled" : "page-item page-link" ?>">
+        <a href="<?= "contacts.php?page=" . ($page - 1) ?>" class="<?= ($page == 1) ? "page-item page-link disabled" : "page-item page-link" ?>">
           قبل
         </a>
         <?php for ($pages = 1; $pages <= $pagination; $pages++) { ?>
@@ -95,7 +95,7 @@ Telegram channel: @HeroExpert_ir
         <?= $pages ?>
         </a>
         <?php } ?>
-        <a href="<?= "contacts.php?page=" . $page + 1 ?>" class="<?= ($pagination <= $page) ? "page-item page-link disabled" : "page-item page-link" ?>">
+        <a href="<?= "contacts.php?page=" . ($page + 1) ?>" class="<?= ($pagination <= $page) ? "page-item page-link disabled" : "page-item page-link" ?>">
           بعد
         </a>
       </div>

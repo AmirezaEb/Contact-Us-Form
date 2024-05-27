@@ -170,6 +170,12 @@ label {
     outline: none;
 }
 
+@media screen and (max-width: 576px) {
+    .login-btm {
+        font-size: 1.9vw!important;
+    }
+}
+
 /* 
 Developed by Hero Expert 
 Telegram channel: @HeroExpert_ir

@@ -89,7 +89,7 @@ Telegram channel: @HeroExpert_ir
       <nav aria-label="Page navigation example">
         <ul class="pagination justify-content-center">
           <li class="<?= ($page == 1) ? "page-item disabled" : "page-item" ?>">
-            <a class="page-link" href="<?= "contacts.php?page=" . $page - 1 ?>">Previous</a>
+            <a class="page-link" href="<?= "contacts.php?page=" . ($page - 1) ?>">Previous</a>
           </li>
           <?php for ($pages = 1; $pages <= $pagination; $pages++) { ?>
             <li class="<?= ($page == $pages) ? "page-item disabled" : "page-item" ?>">
@@ -97,7 +97,7 @@ Telegram channel: @HeroExpert_ir
             </li>
           <?php } ?>
           <li class="<?= ($pagination <= $page) ? "page-item disabled" : "page-item" ?>">
-            <a class="page-link" href="<?= "contacts.php?page=" . $page + 1 ?>">Next</a>
+            <a class="page-link" href="<?= "contacts.php?page=" . ($page + 1) ?>">Next</a>
           </li>
         </ul>
       </nav>

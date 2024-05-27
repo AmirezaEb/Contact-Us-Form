@@ -131,9 +131,8 @@ tbody th {
 
 .close {
     text-align: center;
-    left: 50%;
     margin: 13px auto;
-    width: 20%;
+    padding: 1vh 2vw;
     right: 10px;
 }
 
@@ -382,6 +381,15 @@ tbody th {
     .page-link {
         font-size: 1.5vw !important;
     }
+    .HeroExpert span {
+        font-size: 2vw;
+    }
+    .message {
+        width: 90%;
+    }
+    .close{
+        padding: 1vh 2vw;
+    }
 }
 
 @media screen and (max-width: 576px) {
@@ -392,6 +400,15 @@ tbody th {
     .view-btn,
     .page-link {
         font-size: 2vw !important;
+    }
+    .HeroExpert span {
+        font-size: 2.5vw;
+    }
+    .message {
+        font-size: 1.8vw;
+    }
+    .close{
+        font-size: 2vw;
     }
 }
 

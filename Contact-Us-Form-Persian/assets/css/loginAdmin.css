@@ -113,6 +113,7 @@ input:focus {
     }
 }
 
+
 label {
     margin-bottom: 0px;
 }
@@ -161,7 +162,7 @@ label {
 }
 
 .login-text {
-    text-align: left;
+    text-align: right!important;
     color: #c83000;
     visibility: visible;
     opacity: 1;
@@ -176,6 +177,12 @@ label {
     opacity: 0;
     border: none;
     outline: none;
+}
+
+@media screen and (max-width: 576px) {
+    .login-btm {
+        font-size: 1.9vw!important;
+    }
 }
 
 /* 

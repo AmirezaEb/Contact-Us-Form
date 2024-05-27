@@ -45,7 +45,7 @@ Telegram channel: @HeroExpert_ir
                     <i class="fa fa-key" aria-hidden="true"></i>
                 </div>
                 <div class="col-lg-12 login-title">
-                    پنل ادمین
+                    پنل مدیریت
                 </div>
 
                 <div class="col-lg-12 login-form">
@@ -64,7 +64,7 @@ Telegram channel: @HeroExpert_ir
                                 <!--    -->
                                 <p class="login-btm login-text">
                                     <?php if (isset($_GET['Error']) && $_GET['Error'] == 'NotFoundAdmin') {
-                                        echo "No Admin Was Found With This Email And Password !";
+                                        echo "مدیری با این مشخصات پیدا نشد!";
                                     } ?>
                                 </p>
                                 <div class="col-lg-12 text-center login-btm login-button">
