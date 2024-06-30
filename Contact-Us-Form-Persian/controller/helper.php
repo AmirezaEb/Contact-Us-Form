@@ -13,7 +13,11 @@ function seveMessage($name, $phone, $email, $message)
     global $connect;
     $sql = "INSERT INTO contacts (name,phone,email,message) VALUES (:name,:phone,:email,:message);";
     $stmt = $connect->prepare($sql);
-    $stmt->execute([':name' => $name, ':phone' => $phone, ':email' => $email, ':message' => $message]);
+    $stmt->bindParam(':name', $name,PDO::PARAM_STR);
+    $stmt->bindParam(':phone', $phone,PDO::PARAM_STR);
+    $stmt->bindParam(':email', $email,PDO::PARAM_STR);
+    $stmt->bindParam(':message', $message,PDO::PARAM_STR);
+    $stmt->execute();
     $result = $stmt->rowCount();
     return $result;
 }
@@ -48,8 +52,9 @@ function allContacts($page)
 function contact($id)
 {
     global $connect;
-    $sql = "SELECT * FROM contacts WHERE id = $id;";
+    $sql = "SELECT * FROM contacts WHERE id = :id;";
     $stmt = $connect->prepare($sql);
+    $stmt->bindParam(':id', $id,PDO::PARAM_STR);
     $stmt->execute();
     $result = $stmt->fetch(PDO::FETCH_OBJ);
     return $result;
@@ -59,8 +64,9 @@ function contact($id)
 function updateStatus($id)
 {
     global $connect;
-    $sql = "UPDATE contacts SET status = 'read' WHERE id = $id;";
+    $sql = "UPDATE contacts SET status = 'read' WHERE id = :id;";
     $stmt = $connect->prepare($sql);
+    $stmt->bindParam(':id', $id,PDO::PARAM_STR);
     $stmt->execute();
     $result = $stmt->rowCount();
     return $result;
@@ -82,5 +88,4 @@ function redirect($Url)
 Developed by Hero Expert 
 Telegram channel: @HeroExpert_ir 
 */
-
 ?>
